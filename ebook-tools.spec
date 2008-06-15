@@ -1,5 +1,5 @@
-Summary:	ebook tools
-Summary(pl.UTF-8):	ebook tools
+Summary:	tools for accessing and converting ebook file formats
+Summary(pl.UTF-8):	tools for accessing and converting ebook file formats
 Name:		ebook-tools
 Version:	0.1.0
 Release:	1
@@ -12,10 +12,22 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-ebook-tools.
+ebook-tools provides tools for accessing and converting various ebook file formats.
 
 %description -l pl.UTF-8
-ebook-tools.
+ebook-tools provides tools for accessing and converting various ebook file formats.
+
+%package devel
+Summary:        ebook-tools - header files
+Summary(pl.UTF-8):      ebook-tools - pliki nagłówkowe
+Group:          X11/Development/Libraries
+Requires:       %{name} = %{version}-%{release}
+
+%description devel
+This package contains header files for ebook-tools.
+
+%description devel -l pl.UTF-8
+Pakiet ten zawiera pliki nagłówkowe do ebook-tools.
 
 %prep
 %setup -q
@@ -37,11 +49,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%attr(755,root,root) %{_libdir}/kde4/plasma_applet_wifi_signal.so
 %attr(755,root,root) %{_bindir}/einfo
 %attr(755,root,root) %{_bindir}/lit2epub
+%attr(755,root,root) %{_libdir}/libepub.so.?
+%attr(755,root,root) %{_libdir}/libepub.so.*.*.*
+
+%files devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libepub.so
 %{_includedir}/epub.h
 %{_includedir}/epub_shared.h
-%attr(755,root,root) %{_libdir}/libepub.so
-%attr(755,root,root) %{_libdir}/libepub.so.0
-%attr(755,root,root) %{_libdir}/libepub.so.0.1.0
