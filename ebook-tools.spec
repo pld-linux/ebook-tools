@@ -1,12 +1,12 @@
 Summary:	tools for accessing and converting ebook file formats
 Summary(pl.UTF-8):	tools for accessing and converting ebook file formats
 Name:		ebook-tools
-Version:	0.1.0
+Version:	0.1.1
 Release:	1
 License:	GPL v3
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/ebook-tools/%{name}-%{version}.tar.gz
-# Source0-md5:	020d8bc5b718a9e09242900a496cda8a
+# Source0-md5:	15946af6f946eabe8247cdef9ada2b88
 URL:		http://www.
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
