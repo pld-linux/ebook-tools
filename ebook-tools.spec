@@ -7,6 +7,7 @@ License:	GPL v3
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/ebook-tools/%{name}-%{version}.tar.gz
 # Source0-md5:	15946af6f946eabe8247cdef9ada2b88
+Patch0:		%{name}-lib64.patch
 URL:		http://sourceforge.net/projects/ebook-tools
 BuildRequires:	cmake
 BuildRequires:	libzip-devel
@@ -35,12 +36,16 @@ Pakiet ten zawiera pliki nagłówkowe do ebook-tools.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 install -d build
 cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+%if "%{_lib}" == "lib64"
+	-DLIB_SUFFIX=64 \
+%endif
 	../
 %{__make}
 
