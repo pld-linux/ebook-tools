@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/ebook-tools/%{name}-%{version}.tar.gz
 # Source0-md5:	15946af6f946eabe8247cdef9ada2b88
 URL:		http://sourceforge.net/projects/ebook-tools
 BuildRequires:	cmake
+BuildRequires:	libzip-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
