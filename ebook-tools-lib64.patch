@@ -1,0 +1,9 @@
+--- src/libepub/CMakeLists.txt	2008-06-20 21:10:09.429669500 +0200
++++ src/libepub/CMakeLists.txt-new	2008-06-20 21:09:54.824756750 +0200
+@@ -4,5 +4,5 @@
+ 
+ set_target_properties (epub PROPERTIES VERSION 0.1.1 SOVERSION 0)
+ 
+-install ( TARGETS epub RUNTIME DESTINATION bin LIBRARY DESTINATION lib ARCHIVE DESTINATION lib )
++install ( TARGETS epub RUNTIME DESTINATION bin LIBRARY DESTINATION lib${LIB_SUFFIX} ARCHIVE DESTINATION lib${LIB_SUFFIX} )
+ install ( FILES epub.h epub_shared.h DESTINATION include )
