@@ -36,7 +36,7 @@ Pakiet ten zawiera pliki nagłówkowe do ebook-tools.
 %setup -q
 
 %build
-install build
+install -d build
 cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
