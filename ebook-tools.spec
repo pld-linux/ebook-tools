@@ -36,15 +36,17 @@ Pakiet ten zawiera pliki nagłówkowe do ebook-tools.
 %setup -q
 
 %build
+install build
+cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	.
+	../
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
