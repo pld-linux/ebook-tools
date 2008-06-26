@@ -2,7 +2,7 @@ Summary:	tools for accessing and converting ebook file formats
 Summary(pl.UTF-8):	tools for accessing and converting ebook file formats
 Name:		ebook-tools
 Version:	0.1.1
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/ebook-tools/%{name}-%{version}.tar.gz
@@ -57,6 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
