@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/ebook-tools/%{name}-%{version}.tar.gz
 Patch0:		%{name}-lib64.patch
 URL:		http://sourceforge.net/projects/ebook-tools
 BuildRequires:	cmake
+BuildRequires:	libxml2-devel
 BuildRequires:	libzip-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,6 +44,8 @@ install -d build
 cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DCMAKE_CXX_COMPILER_WORKS=1 \
+	-DCMAKE_CXX_COMPILER="%{__cc}" \
 %if "%{_lib}" == "lib64"
 	-DLIB_SUFFIX=64 \
 %endif
