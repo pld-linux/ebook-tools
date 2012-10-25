@@ -3,12 +3,12 @@ Summary(pl.UTF-8):	Narzędzia do odczytu i konwersji formatów plików ebooków
 Name:		ebook-tools
 Version:	0.2.2
 Release:	1
-License:	GPL v3
-Group:		X11/Libraries
+License:	MIT
+Group:		Libraries
 Source0:	http://downloads.sourceforge.net/ebook-tools/%{name}-%{version}.tar.gz
 # Source0-md5:	67bce67ceb72dcc3578d6a81ef92b29b
 URL:		http://ebook-tools.sourceforge.net/
-BuildRequires:	cmake
+BuildRequires:	cmake >= 2.4.0
 BuildRequires:	libxml2-devel
 BuildRequires:	libzip-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
@@ -25,7 +25,7 @@ formatów plików ebooków.
 %package devel
 Summary:	ebook-tools - header files for libepub library
 Summary(pl.UTF-8):	ebook-tools - pliki nagłówkowe biblioteki libepub
-Group:		X11/Development/Libraries
+Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
@@ -66,6 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc LICENSE README TODO
 %attr(755,root,root) %{_bindir}/einfo
 %attr(755,root,root) %{_bindir}/lit2epub
 %attr(755,root,root) %{_libdir}/libepub.so.*.*.*
