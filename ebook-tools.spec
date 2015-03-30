@@ -2,11 +2,12 @@ Summary:	Tools for accessing and converting ebook file formats
 Summary(pl.UTF-8):	Narzędzia do odczytu i konwersji formatów plików ebooków
 Name:		ebook-tools
 Version:	0.2.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/ebook-tools/%{name}-%{version}.tar.gz
 # Source0-md5:	67bce67ceb72dcc3578d6a81ef92b29b
+Patch0:		findlibzip.patch
 URL:		http://ebook-tools.sourceforge.net/
 BuildRequires:	cmake >= 2.4.0
 BuildRequires:	libxml2-devel
@@ -37,6 +38,7 @@ ebook-tools.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 install -d build
