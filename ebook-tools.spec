@@ -2,7 +2,7 @@ Summary:	Tools for accessing and converting ebook file formats
 Summary(pl.UTF-8):	Narzędzia do odczytu i konwersji formatów plików ebooków
 Name:		ebook-tools
 Version:	0.2.2
-Release:	4
+Release:	5
 License:	MIT
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/ebook-tools/%{name}-%{version}.tar.gz
